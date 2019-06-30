@@ -1,18 +1,26 @@
-package ba.unsa.etf.rs.tut5;
+package sample;
 
 import javafx.beans.property.SimpleStringProperty;
 
 public class Korisnik {
-    private SimpleStringProperty ime,prezime,email,username,password;
+    private SimpleStringProperty ime = new SimpleStringProperty("noviKorisnik");
+    private SimpleStringProperty prezime = new SimpleStringProperty("");
+    private SimpleStringProperty email = new SimpleStringProperty("");
+    private SimpleStringProperty username = new SimpleStringProperty("");
+    private SimpleStringProperty password = new SimpleStringProperty("");
 
-    public Korisnik(SimpleStringProperty ime, SimpleStringProperty prezime, SimpleStringProperty email, SimpleStringProperty username, SimpleStringProperty password) {
-        this.ime = ime;
-        this.prezime = prezime;
-        this.email = email;
-        this.username = username;
-        this.password = password;
+    public Korisnik() {
     }
 
+    public Korisnik(String imeIn, String  prezimeIn, String  emailIn, String  usernameIn, String  passwordIn) {
+        this.ime = new SimpleStringProperty(imeIn);
+        this.prezime = new SimpleStringProperty(prezimeIn);
+        this.email = new SimpleStringProperty(emailIn);
+        this.username = new SimpleStringProperty(usernameIn);
+        this.password = new SimpleStringProperty(passwordIn);
+    }
+
+    //ime
     public String getIme() {
         return ime.get();
     }
@@ -25,6 +33,8 @@ public class Korisnik {
         this.ime.set(ime);
     }
 
+
+    //prezime
     public String getPrezime() {
         return prezime.get();
     }
@@ -37,6 +47,8 @@ public class Korisnik {
         this.prezime.set(prezime);
     }
 
+
+    //email
     public String getEmail() {
         return email.get();
     }
@@ -49,6 +61,9 @@ public class Korisnik {
         this.email.set(email);
     }
 
+
+
+    //username
     public String getUsername() {
         return username.get();
     }
@@ -61,6 +76,8 @@ public class Korisnik {
         this.username.set(username);
     }
 
+
+    //password
     public String getPassword() {
         return password.get();
     }
@@ -71,5 +88,10 @@ public class Korisnik {
 
     public void setPassword(String password) {
         this.password.set(password);
+    }
+
+    @Override
+    public String toString() {
+        return ime.get() + " " + prezime.get();
     }
 }
